@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" misplaced="YES" id="vsJ-8C-cPO">
-                                <rect key="frame" x="16" y="257" width="343" height="7"/>
+                                <rect key="frame" x="0.0" y="257" width="375" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -76,8 +76,13 @@
                                     <action selector="onSegmentedChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="SUx-XR-4I4"/>
                                 </connections>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="xHA-K2-VHk">
+                                <rect key="frame" x="0.0" y="65" width="375" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.53973607884513009" green="0.7656746639145745" blue="0.88215686877568567" alpha="0.45408818493150682" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80772110488679671" green="0.95021784967846346" blue="0.91356962919235229" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="x7k-Mj-Qhk" appends="YES" id="Dyf-Fz-M2w"/>
@@ -129,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80772110490000004" green="0.95021784970000001" blue="0.91356962919999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Sex-83-DBC"/>
                     <connections>
