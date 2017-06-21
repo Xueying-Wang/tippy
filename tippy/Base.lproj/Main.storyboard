@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4O5-Si-wVS">
-                                <rect key="frame" x="31" y="107" width="23" height="21"/>
+                                <rect key="frame" x="31" y="107" width="38" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" misplaced="YES" id="vsJ-8C-cPO">
-                                <rect key="frame" x="16" y="252" width="343" height="12"/>
+                                <rect key="frame" x="16" y="257" width="343" height="7"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -63,9 +63,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="AXF-uE-1SI"/>
-                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="rma-ox-Ir9">
                                 <rect key="frame" x="16" y="365" width="343" height="29"/>
@@ -76,7 +73,7 @@
                                     <segment title="25%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pa5-5o-dj4"/>
+                                    <action selector="onSegmentedChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="SUx-XR-4I4"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -86,7 +83,13 @@
                             <outletCollection property="gestureRecognizers" destination="x7k-Mj-Qhk" appends="YES" id="Dyf-Fz-M2w"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="dbL-8t-oDP"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="dbL-8t-oDP">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="3af-mC-pOA">
+                            <connections>
+                                <segue destination="2uH-hi-FTW" kind="push" id="y68-s9-oR2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="lxg-Pe-DTg" id="5Iz-3e-00W"/>
                         <outlet property="tipControl" destination="rma-ox-Ir9" id="dNj-Pn-Jrk"/>
@@ -102,6 +105,40 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="537.5" y="154.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="jFH-s9-CZz">
+            <objects>
+                <viewController id="2uH-hi-FTW" customClass="SettingsViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lfo-pe-LAa" customClass="Settings">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="sAb-pV-G2t">
+                                <rect key="frame" x="190" y="107" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="tip rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WdD-iw-fzJ">
+                                <rect key="frame" x="24" y="112" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Sex-83-DBC"/>
+                    <connections>
+                        <outlet property="tipField" destination="sAb-pV-G2t" id="y1a-Fa-NLO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlS-C1-s6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970.5" y="154.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O0A-8D-oJ3">

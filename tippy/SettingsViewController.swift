@@ -10,10 +10,20 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var tipField: UITextField!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let tip = Double(tipField.text!) ?? 0
+        let defaults = UserDefaults.standard
+        defaults.set(tip, forKey: "default_tip_percentage")
+        defaults.synchronize()
     }
 
     override func didReceiveMemoryWarning() {
